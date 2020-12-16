@@ -1,0 +1,29 @@
+body
+{
+    font-family: 'Courier New', Courier, monospace;
+}
+.dark_red
+{
+    color: darkred;
+}
+.account-img
+{
+    border: 2px solid black;
+    width: 50px;
+}
+.padd
+{
+    padding-top: 50px;
+}
+.padd2
+{
+    padding-top: 100px;
+}
+.padd3
+{
+    padding-top: 200px;
+}
+#test
+{
+    background-color: yellow;
+}

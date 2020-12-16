@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href={% static 'landing/main.css' %}>
+    <style src="{% static 'landing/main.js' %}"></style>
+    <title>{{title}}</title>
+</head>
+<body>
+<style>
+window.onscroll = function() {scrolling()};
+function scrolling()
+{
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50)
+    {
+        document.getElementById("fancy").classList.add("bg-dark");
+        document.getElementById("fancy").classList.remove("bg-light");
+    } else
+    {
+        continue;
+    }
+}
+</style>
+    <!-- nav -->
+    <header class="site-header">
+        <nav class="navbar fixed-top navbar-expand-lg bg-light navbar-light rounded" id="fancy">
+            <a class="navbar-brand" href="https://kryptsec.com">KryptSec</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                {% if user.is_authenticated %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'landing-home' %}">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                {% else %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'landing-home' %}">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                {% endif %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'landing-about' %}">About</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'challenges-home' %}">Challenges</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="##">Teams</a>
+                    </li>
+                    <li class="nav-item">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="##">Scoreboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+            {% if user.is_authenticated %}
+                <nav class="navbar-nav ml-auto">
+                    <ul class="navbar-nav">
+                    <p class="mt-2 mr-2 dark_red">{{user.username}}</p>
+                    <img class="rounded-circle account-img img-fluid mr-2" src="{{user.profile.image.url}}">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'users-profile' %}">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'users-logout' %}">Logout</a>
+                        </li>
+                    </ul>
+                </nav>
+            {% else %}
+                <nav class="navbar-nav ml-auto">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'users-login' %}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'users-register' %}">Signup</a>
+                        </li>
+                    </ul>
+                </nav>
+            {% endif %}
+        </nav>
+    </header>
+    <div class="container padd2 mb-5 text-center">
+        {% if messages %}
+            {% for message in messages %}
+                <em class=" text-center alert alert-{{ message.tags }}">{{message}}</em>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="padd">
+        {% block content %}{% endblock content %}
+    </div>
+    <div class="padd3"></div>
+    <footer>
+        <nav class="navbar bottom navbar-light bg-transparent">
+            <div class="container">
+                <div class="jumbotron bg-white text-center mt-5">
+                    KryptSec is optimized for learning, testing, and training. Copyright 2017-2020 by MLTechi LLC. All Rights Reserved.
+                </div>
+            </div>
+        </nav>
+    </footer>
+
+
+    
+</body>
+</html>

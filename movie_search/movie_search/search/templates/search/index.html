@@ -1,0 +1,35 @@
+{% extends 'search/base.html' %}
+{% load static %}
+{% block content %}
+<div class="jumbotron text-center">
+    <h1>{{title}}</h1>
+</div>
+<div class="container">
+    <br>
+    <p>1. Use <a href="https://imdb.com" target="_blank">IMDB</a> to make sure you know which movie it is you'd like to watch.
+    <br>
+    2. Type in the name of the movie you wish to watch in the search bar.
+    <br>
+    3. Find the right movie, click download
+    <br>
+    4. Check back in 20 minutes and enjoy your film :)
+
+    <br><br>
+    Search a term. Example : Clouds
+    results pop back this: 
+    <a href="https://yts.mx/api/v2/list_movies.json?query_term=Clouds">Your results</a>
+    </p>
+    <p>
+    {% for movie in movies %}
+        <a href="{{movie.m_hash}}">{{movie.name}}</a></em><br>
+        <em>{{movie.year}}</em><br>
+        <em>{{movie.m_hash}}</em><br>
+        <em>{{movie.rating}}</em><br>
+    {% endfor %}
+    </p>
+
+</div>
+<div class="jumbotron text-center bg-transparent">
+    <h3>Visit <a href="https://yts.mx" target="_blank">here</a>  if you know what you're doing"</h3> 
+</div>
+{% endblock content %}
