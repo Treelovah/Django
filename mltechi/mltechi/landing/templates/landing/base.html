@@ -26,21 +26,21 @@ _ -  | |   -_
 // \\
         </pre>
         <br>
-        <h3 style="color : #5B7300;"><b>{{name}}</b></h3>
+        <h3 id="name"><b>{{name}}</b></h3>
         
         {% for i in description %}
-            <em style="color : #ECB176;">{{i}}<br>
+            <em id="info">{{i}}<br>
         {% endfor %}
 
         <div class=" text-center">
             <br>
-            <span style="color: #5B7300;">Email:<span style="color : #ECB176;">{{email}}</span></span>
+            <span id="name">Email:<span id="info">{{email}}</span></span>
             <br>
-            <span style="color: #5B7300;">Phone:<span style="color : #ECB176;">{{phone}}</span></span>
+            <span id="name">Phone:<span id="info">{{phone}}</span></span>
             <br><br>
             {% for item in social %}
                 {% for link,name in item.items %}
-                    <a style="color : #b35900;" href="{{link}}" class="{{name}}"></a>
+                    <a id="icons" href="{{link}}" class="{{name}}"></a>
                 {% endfor %}
             {% endfor %}
         </div>
@@ -52,7 +52,7 @@ _ -  | |   -_
         <br>
             {% for dict in core %}
                 {% for link, name in dict.items %}
-                    <a style="color : #b35900;" href="{{link}}">{{name}}</a><em> // </em>
+                    <a id="icons" href="{{link}}">{{name}}</a><em> // </em>
                 {% endfor %}
             {% endfor %}
     </div>

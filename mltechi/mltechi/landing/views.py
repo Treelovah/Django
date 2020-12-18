@@ -10,6 +10,7 @@ data = {
             { 'https://twitter.com/tr33lovah' : 'fa fa-twitter' },
             { 'https://www.linkedin.com/in/marshall-livingston-005945137/' : 'fa fa-linkedin' },
             { 'https://www.youtube.com/channel/UCRV2XpTL8K4pVxaVZx4Vq2A/playlists?view_as=subscriber' : 'fa fa-youtube' },
+            { 'https://github.com/Treelovah' : 'fa fa-github' },
         ],
         'core' : [
             { 'https://ourcloud.us/s/DKgP2sGCiXai2tn' : 'Resume' },
@@ -23,7 +24,3 @@ data = {
 def home(request):
     context = data
     return render(request, 'landing/base.html', context)
-
-def pdfs(request):
-    context = data
-    return render(request, 'landing/pdfs.html', context)

@@ -1,5 +1,0 @@
-                I'm a Linux Systems Administrator and Software Engineer from Fort Collins, Colorado.
-                <br>
-                I began teaching myself how to program in mid 2016 and never looked back. 
-                My first language was python and my first program was a "Macintosh cache cleaner" hacked together script that helped speed up the time it would take me to go through a clients macbook and clean their cache manually.
-                Building that and using it with my work inspired my coding career and set my path over the next 5 years.

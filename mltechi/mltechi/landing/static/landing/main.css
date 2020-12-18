@@ -4,3 +4,18 @@ body
     color: aliceblue;
     font-family: "Courier New", Courier, monospace;
 }
+
+#name
+{
+    color : #5B7300;
+}
+
+#info
+{
+    color : #ECB176;
+}
+
+#icons
+{
+    color : #b35900;
+}
