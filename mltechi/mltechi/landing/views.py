@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 data = {
+        'title' : 'ML Techi',
         'email' : 'mltechi@pm.me',
         'phone' : '(847) 306-2012',
         'name' : 'Marshall Livingston',
@@ -13,7 +14,7 @@ data = {
             { 'https://github.com/Treelovah' : 'fa fa-github' },
         ],
         'core' : [
-            { 'https://ourcloud.us/s/DKgP2sGCiXai2tn' : 'Resume' },
+            { 'https://ourcloud.us/s/LsQqifjcK6zrQTN' : 'Resume' },
             { 'https://ourcloud.us/s/yS8MKRZmNwmPM6z' : 'Certifications'},
             { 'https://ourcloud.us/s/GgXTB4ZoNz7M8wY' : 'Reading Material' },
             { 'https://kryptsec.com' : 'KryptSec' },

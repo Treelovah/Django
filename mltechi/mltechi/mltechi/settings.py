@@ -22,9 +22,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ['SECRET_KEY']
-
+ADMIN_ENABLED = False
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['mltechi.com', 'localhost']
 
@@ -67,8 +67,7 @@ TEMPLATES = [
             ],
         },
     },
-]
-
+] 
 WSGI_APPLICATION = 'mltechi.wsgi.application'
 
 
@@ -118,7 +117,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-STATIC_ROOT = '/home/tree/Documents/Github/Django/mltechi/mltechi/landing/static/landing/'
+STATIC_ROOT = '/var/www/mltechi/mltechi/static'
 STATIC_URL = '/static/'
-# CSRF_COOKIE_SECURE = True
-# SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
