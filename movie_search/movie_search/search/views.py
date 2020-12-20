@@ -18,7 +18,7 @@ class Movie:
     rating = 0
     image = ""
 
-name = "clouds" ## Allow user to pass string (title) parameter
+name = "Trousers" ## Allow user to pass string (title) parameter
 
 r = requests.get(f'https://yts.mx/api/v2/list_movies.json?query_term={name}&sort_by=rating').json()
 i = 0

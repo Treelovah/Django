@@ -27,15 +27,11 @@
         </form>  {% endcomment %}
 
         {% for movie in movies %}
-        {% csrf_token %}
             <form action="" method="POST">
-
+            {% csrf_token %}
             <label for="movie_name">{{movie.name}}: </label> 
             <button type="submit" name="movie_name" value="{{movie.m_hash}}">Download</button><br>
 
-                {% comment %} <em>{{movie.year}}</em><br>
-                <em>{{movie.m_hash}}</em><br>
-                <em>{{movie.rating}}</em><br> {% endcomment %}
         {% endfor %}
             </form>
             
