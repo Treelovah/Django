@@ -6,26 +6,39 @@
 </div>
 <div class="container">
     <br>
-    <p>1. Use <a href="https://imdb.com" target="_blank">IMDB</a> to make sure you know which movie it is you'd like to watch.
-    <br>
-    2. Type in the name of the movie you wish to watch in the search bar.
-    <br>
-    3. Find the right movie, click download
-    <br>
-    4. Check back in 20 minutes and enjoy your film :)
-
-    <br><br>
-    Search a term. Example : Clouds
-    results pop back this: 
-    <a href="https://yts.mx/api/v2/list_movies.json?query_term=Clouds">Your results</a>
-    </p>
     <p>
-    {% for movie in movies %}
-        <a href="{{movie.m_hash}}">{{movie.name}}</a></em><br>
-        <em>{{movie.year}}</em><br>
-        <em>{{movie.m_hash}}</em><br>
-        <em>{{movie.rating}}</em><br>
-    {% endfor %}
+        1. Use <a href="https://imdb.com" target="_blank">IMDB</a> to make sure you know which movie it is you'd like to watch.
+        <br>
+        2. Type in the name of the movie you wish to watch in the search bar.
+        <br>
+        3. Find the right movie, click download
+        <br>
+        4. Check back in 20 minutes and enjoy your film :)
+
+        <br><br> 
+        <a href="https://yts.mx/api/v2/list_movies.json?query_term=Clouds">Your results</a>
+    </p>
+    <p>        
+        {% comment %} <form action = "" method = "POST"> 
+        {% csrf_token %}
+            <label for="movie_name">Your search: </label> 
+            <input id="your_name" type="checkbox" name="movie_name" value="my furry butthole"> 
+            <input type="submit" value="OK"> 
+        </form>  {% endcomment %}
+
+        {% for movie in movies %}
+        {% csrf_token %}
+            <form action="" method="POST">
+
+            <label for="movie_name">{{movie.name}}: </label> 
+            <button type="submit" name="movie_name" value="{{movie.m_hash}}">Download</button><br>
+
+                {% comment %} <em>{{movie.year}}</em><br>
+                <em>{{movie.m_hash}}</em><br>
+                <em>{{movie.rating}}</em><br> {% endcomment %}
+        {% endfor %}
+            </form>
+            
     </p>
 
 </div>

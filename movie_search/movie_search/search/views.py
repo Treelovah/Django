@@ -2,6 +2,7 @@ from django.shortcuts import render
 import requests
 import json
 import argparse
+import os
 
 movies = []
 
@@ -35,6 +36,10 @@ for i in range(0, 20):
         pass
 
 def home(request):
+    if request.POST == '':
+        pass
+    else:
+        os.system(f"qbittorrent-nox {request.POST.get('movie_name')} --save-path=/home/tree/Documents/plex/movies/ --skip-dialog=true")
     context = {
         'movies': movies,
         'title': 'Private Torrents',
