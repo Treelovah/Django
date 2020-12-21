@@ -19,8 +19,7 @@ class Movie:
     rating = 0
     image = ""
 
-## POC test
-## Ultimately allow user to search
+## POC
 
 def home(request):
 
@@ -63,7 +62,5 @@ def home(request):
             print(request.POST.get('movie_name'))
             # os.system(f"qbittorrent-nox {request.POST.get('movie_name')} --save-path={os.environ('TOR')} --skip-dialog=true")
             return (render(request, 'search/success.html'))
-    # context = {
-    #     'title': 'Private Torrents',
-    # }
+
     return render(request, 'search/index.html', {'title' : 'Private Torrentz'} )

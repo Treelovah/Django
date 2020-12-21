@@ -48,9 +48,6 @@
                 </div>
                 
             {% csrf_token %}
-            {% comment %} <em>{{movie.name}}: </em><br>
-            <em>{{movie.year}}</em> 
-            <button type="submit" name="movie_name" value="{{movie.m_hash}}">Download</button><br> {% endcomment %}
 
         {% endfor %}
             </form>
