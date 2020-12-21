@@ -58,13 +58,14 @@ def home(request):
             request.POST.get('movie')
 
             # print(request.POST.get('movie'))
-        # os.system(f"qbittorrent-nox {request.POST.get('movie_name')} --save-path=os.environ('TOR') --skip-dialog=true")
+        # 
         # print(request.POST.get('movie_name'))
         
         if request.POST.get('movie_name') == None:
             pass
         else:
             print(request.POST.get('movie_name'))
+            # os.system(f"qbittorrent-nox {request.POST.get('movie_name')} --save-path={os.environ('TOR')} --skip-dialog=true")
             return (render(request, 'search/success.html'))
     # context = {
     #     'title': 'Private Torrents',
