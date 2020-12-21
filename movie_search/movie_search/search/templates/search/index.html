@@ -16,29 +16,46 @@
         4. Check back in 20 minutes and enjoy your film :)
 
         <br><br> 
-        <a href="https://yts.mx/api/v2/list_movies.json?query_term=Clouds">Your results</a>
+
     </p>
     <p>        
-        {% comment %} <form action = "" method = "POST"> 
-        {% csrf_token %}
-            <label for="movie_name">Your search: </label> 
-            <input id="your_name" type="checkbox" name="movie_name" value="my furry butthole"> 
-            <input type="submit" value="OK"> 
-        </form>  {% endcomment %}
 
+        <form action="" method="POST">
+            {% csrf_token %}
+            Search for Movie :
+            <br><input type="text" name="movie"><br>
+            <button type="submit" value="submit" class="btn btn-info">Submit</button>
+            <hr><br><br>
+        </form>
+                <a href="https://yts.mx/api/v2/list_movies.json?query_term=Clouds">Your results</a>
         {% for movie in movies %}
             <form action="" method="POST">
+                <div class="card" style="width: 50rem;">
+                <img class="card-img-top" src="..." alt="Movie image will display here">
+                <div class="card-body">
+                    <h5 class="card-title">{{movie.name}}</h5>
+                    <p class="card-text">{{movie.summary}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span class="badge badge-info">movie year</span> : {{movie.year}}</li>
+                    <li class="list-group-item"><span class="badge badge-info">movie rating</span> : {{movie.rating}}</li>
+                    <li class="list-group-item"><span class="badge badge-info">movie title</span> : {{movie.name}}</li>
+                </ul>
+                <div class="card-body">
+                    <a href="https://www.imdb.com/title/{{movie.imdb}}/" class="card-link">IMDB link</a>
+                    <button type="submit" name="movie_name" value="{{movie.m_hash}}" class="btn btn-success">Download</button><br>
+                </div>
+                </div>
+                
             {% csrf_token %}
-            <label for="movie_name">{{movie.name}}: </label> 
-            <button type="submit" name="movie_name" value="{{movie.m_hash}}">Download</button><br>
+            {% comment %} <em>{{movie.name}}: </em><br>
+            <em>{{movie.year}}</em> 
+            <button type="submit" name="movie_name" value="{{movie.m_hash}}">Download</button><br> {% endcomment %}
 
         {% endfor %}
             </form>
-            
     </p>
 
 </div>
-<div class="jumbotron text-center bg-transparent">
-    <h3>Visit <a href="https://yts.mx" target="_blank">here</a>  if you know what you're doing"</h3> 
-</div>
+
 {% endblock content %}
