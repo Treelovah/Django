@@ -56,10 +56,6 @@ def home(request):
 
             print(f"searching torrent: {request.POST.get('movie')}")
             request.POST.get('movie')
-
-            # print(request.POST.get('movie'))
-        # 
-        # print(request.POST.get('movie_name'))
         
         if request.POST.get('movie_name') == None:
             pass
